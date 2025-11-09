@@ -1,0 +1,6 @@
+dotenv
+httpx
+fastmcp
+groq
+trafilatura
+mcp
