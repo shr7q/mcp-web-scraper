@@ -114,7 +114,27 @@ docs_urls = {
 ## Running the MCP Server on Cloud Desktop
 After successful local testing, the MCP server was deployed on a cloud desktop environment for continuous availability and integration.
 A JSON configuration file was created under the name claude_desktop_config.json to define the MCP server’s launch command, working directory, and environment variables.
+### Create the Configuration File
 
+Create a file named **`mcp_config.json`** (or similar) in your project directory.  
+This JSON configuration defines how the Cloud Desktop environment should launch your MCP server, including paths, environment variables, and dependencies.
 
+Below is an example configuration:
 
-
+```json
+{
+  "mcpServers": {
+    "docs-mcp": {
+      "command": "Path to your Python executable",
+      "args": [
+        "Path to your mcp_server.py file"
+      ],
+      "cwd": " Path to your working directory",
+      "env": {
+        "SERPER_API_KEY": "your serper api",
+        "GROQ_API_KEY": "your groq api"
+      }
+    }
+  }
+}
+```
